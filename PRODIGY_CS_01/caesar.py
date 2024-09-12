@@ -4,7 +4,6 @@ start_char = ord('A')
 end_char = ord('Z')
 char_len = end_char - start_char + 1
 
-
 def ciphar(message,shift):
     result = ""
     for letter in message.upper():
@@ -31,5 +30,5 @@ while True:
         print("See you later, user :)\n")
         quit()
     user_input = input("Enter the message: ")
-    user_key = int(input("Enter the shift key: "))
+    user_key = int(input("Enter the shift key (1-24): "))
     print(ciphar(user_input, user_key))
