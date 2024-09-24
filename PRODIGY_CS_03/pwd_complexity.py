@@ -1,3 +1,5 @@
+# Password complexity checker
+
 import re
 from tkinter import *
 
@@ -104,7 +106,7 @@ password_label = Label(root, text="Enter the password", font=("Helvetica", 14), 
 password_label.pack(padx=20)
 
 # Password entry
-password_entry = Entry(root, font=("Helvetica", 14), show="*", bg="#2D2D2D", fg="#FFFFFF", insertbackground="#FFFFFF", relief="flat")
+password_entry = Entry(root, font=("Helvetica", 14), bg="#2D2D2D", fg="#FFFFFF", insertbackground="#FFFFFF", relief="flat")
 password_entry.pack(pady=20)
 
 # Check button
