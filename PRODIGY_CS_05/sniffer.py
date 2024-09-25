@@ -33,7 +33,7 @@ def start_sniffing():
 def start_sniffer():
     if not sniffing_status.get():
         sniffing_status.set(True)
-        update_status("Sniffing...") djskjdsjdvs
+        update_status("Sniffing...") 
         sniff_thread = threading.Thread(target=start_sniffing)
         sniff_thread.setDaemon(True)
         sniff_thread.start()
