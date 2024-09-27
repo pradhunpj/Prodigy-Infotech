@@ -114,7 +114,7 @@ check_button = Button(root, text="Check Score", font=("Helvetica", 14), bg="#007
 check_button.pack(pady=20)
 
 # Result label
-result_label = Label(root, text="", font=("Helvetica", 14), fg="#D4D4D4", bg="#1E1E1E")
+result_label = Label(root, text="", font=("Merriweather", 12), fg="#D4D4D4", bg="#1E1E1E", anchor="w")
 result_label.pack(pady=20)
 
 # Status label

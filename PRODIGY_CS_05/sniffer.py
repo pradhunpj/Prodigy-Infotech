@@ -3,12 +3,12 @@ import tkinter as tk
 from tkinter import scrolledtext, messagebox
 import threading
 
-
+# Function to map protocol numbers to human-readable names
 def protocol_name(protocol_number):
     protocols = {1: "ICMP", 6: 'TCP', 17: 'UDP'}
     return protocols.get(protocol_number, 'Unknown')
 
-
+# Function to handle each captured packet
 def packet_details(packet):
     if packet.haslayer('IP'):
         source_ip = packet['IP'].src
@@ -16,14 +16,9 @@ def packet_details(packet):
         protocol_num = packet['IP'].proto
         protocol = protocol_name(protocol_num)
 
-        payload = "No Data"
-        if packet.haslayer("Raw"):
-            payload = packet["Raw"].load.decode(errors= "ignore")
-
         # Insert packet details into the text box
         text_output.insert(tk.END, f"Source: {source_ip} --> Destination: {destination_ip}  |  Protocol: {protocol}\n")
-        text_output.insert(tk.END, f"Payload: {payload}\n\n")
-        text_output.see(tk.END)  
+        text_output.see(tk.END)  # Scroll to the latest entry
 
 # Start sniffing packets
 def start_sniffing():
@@ -33,7 +28,7 @@ def start_sniffing():
 def start_sniffer():
     if not sniffing_status.get():
         sniffing_status.set(True)
-        update_status("Sniffing...") 
+        update_status("Sniffing...")
         sniff_thread = threading.Thread(target=start_sniffing)
         sniff_thread.setDaemon(True)
         sniff_thread.start()

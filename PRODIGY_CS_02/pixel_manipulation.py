@@ -12,7 +12,7 @@ def open_image():  #code to open image file
         try:
             # Open and resize the image
             image = Image.open(file_path)
-            image.thumbnail((200,200), Image.Resampling.LANCZOS)
+            image.thumbnail((300,300), Image.Resampling.LANCZOS)
             
             # Convert image to PhotoImage
             photo = ImageTk.PhotoImage(image)
@@ -100,7 +100,7 @@ def decrypt():  #code to Decrypt image
 
 root = Tk()
 root.title("Encryption Tool For Image")
-root.geometry("500x500")
+root.geometry("500x550")
 root.config(bg="black")
 head_lable = Label(root,text="Welcome to ImageCrypt",font=("Times New Roman", 30 ,"bold"),bg="black",fg="white")
 head_lable.pack()
